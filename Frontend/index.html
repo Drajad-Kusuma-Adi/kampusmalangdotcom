@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kampusMalang</title>
+    <meta name="description" content="Website untuk mencari informasi tentang universitas di kota Malang." />
+    <link rel="shortcut icon" type="image/jpg" href="assets/logo.png" />
+    <link rel="stylesheet" href="./styles/main.css" />
+</head>
+
+<body id="landing">
+    <header class="header header-transparent">
+      <div class="container">
+        <img src="assets/logo.png" alt="Logo" class="logo">
+      </div>
+    </header>
+  
+    <main class="main-content">
+      <div class="container">
+        <h1>TEMUKAN <span style="color: #ffa500">UNIVERSITAS IMPIAN</span> ANDA HARI INI!</h1>
+        <p>Memilih universitas dan jurusan yang tepat sangat penting untuk kesuksesan dan kebahagiaan Anda di masa depan. Itulah mengapa platform kami menyediakan informasi lengkap tentang universitas di kota Anda, termasuk program studi, fakultas, dan kehidupan kampus. Dengan bantuan kami, Anda dapat menemukan universitas yang sesuai dengan kebutuhan dan tujuan Anda.</p>
+        <a href="pages/register.html"><button>Daftar Sekarang</button></a>
+      </div>
+    </main>
+  
+    <footer class="footer footer-transparent">
+      <div class="container">
+        <p>&copy; 2023 Drajad Kusuma Adi. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    let loginStatus = localStorage.getItem('kampusMalangLogin');
+
+    if (loginStatus) {
+      let tokenJson = JSON.stringify({ token: loginStatus });
+      let jsonData = JSON.parse(tokenJson);
+
+      $.ajax({
+          url: "http://127.0.0.1:8000/api/v1/auth/check_login",
+          type: 'POST',
+          data: jsonData,
+          success: function(response) {
+            window.location.href = 'pages/guard/dashboard.html';
+          },
+          error: function() {
+            console.log('Not logged in');
+          }
+        });
+    }
+  </script>
+
+</html>

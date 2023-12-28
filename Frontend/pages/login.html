@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kampusMalang</title>
+    <meta name="description" content="Website untuk mencari informasi tentang universitas di kota Malang." />
+    <link rel="shortcut icon" type="image/jpg" href="../assets/logo.png" />
+    <link rel="stylesheet" href="../styles/main.css" />
+</head>
+
+<body>
+    <header class="header header-colored">
+      <div class="container">
+        <a href="../index.html"><img src="../assets/logo.png" alt="logo.png" class="logo"></a>
+      </div>
+    </header>
+  
+    <main class="main-content" style="margin-top: 50px;">
+      <div class="container">
+        <form action="" method="post" id="login_form" style="border: 2px solid #cccccc; padding: 20px; color: black; margin-bottom: 100px;">
+            <div>
+                <h1>Login</h1>
+            </div>
+            <div class="form-container form-divider">
+                <div class="form-side">
+                    <div>
+                        <label for="email">Alamat email</label><br>
+                        <input type="email" id="email" name="email" required autocomplete="off">
+                    </div>
+                    <div>
+                        <label for="password">Password</label><br>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div>
+                      <input type="submit" value="Submit">
+                      <a href="register.html">Belum punya akun? Daftar</a>
+                    </div>
+                </div>
+        </form>
+      </div>
+    </main>
+  
+    <footer class="footer footer-colored">
+      <div class="container">
+        <p>&copy; 2023 Drajad Kusuma Adi. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="../scripts/auth/guest.js"></script>
+  <script src="../scripts/login.js"></script>
+
+</html>
