@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kampusMalang</title>
+    <meta name="description" content="Website untuk mencari informasi tentang universitas di kota Malang." />
+    <link rel="shortcut icon" type="image/jpg" href="../assets/logo.png" />
+    <link rel="stylesheet" href="../styles/main.css" />
+</head>
+
+<body>
+    <header class="header header-colored">
+      <div class="container">
+        <a href="../index.html"><img src="../assets/logo.png" alt="logo.png" class="logo"></a>
+      </div>
+    </header>
+  
+    <main class="main-content" style="margin-top: 50px;">
+      <div class="container">
+        <form action="" method="post" id="register_form" enctype="multipart/form-data" style="border: 2px solid #cccccc; padding: 20px; color: black; margin-bottom: 100px;">
+            <div>
+                <h1>Pendaftaraan</h1>
+            </div>
+            <div class="form-container form-divider">
+                <div class="form-side">
+                    <div>
+                        <label for="nama">Nama lengkap</label><br>
+                        <input type="text" id="nama" name="nama" required>
+                    </div>
+                    <div>
+                        <label for="email">Alamat email</label><br>
+                        <input type="email" id="email" name="email" required autocomplete="off">
+                    </div>
+                    <div>
+                        <label for="password">Buat password</label><br>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div>
+                        <label for="tanggal_lahir">Tanggal lahir</label><br>
+                        <input type="date" id="tanggal_lahir" name="tanggal_lahir" required>
+                    </div>
+                    <div>
+                        <label for="gender">Jenis kelamin</label><br>
+                        <select id="gender" name="gender" required>
+                            <option value="">Pilih</option>
+                            <option value="laki-laki">Laki-laki</option>
+                            <option value="perempuan">Perempuan</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-side">
+                    <div>
+                        <label for="alamat">Alamat</label><br>
+                        <input type="text" id="alamat" name="alamat" required>
+                    </div>
+                    <div>
+                        <label for="nomor_telepon">Nomor HP aktif</label><br>
+                        <input type="tel" id="nomor_telepon" name="nomor_telepon" required>
+                    </div>
+                    <div>
+                        <label for="pendidikan">Pendidikan terakhir</label><br>
+                        <input type="text" id="pendidikan" name="pendidikan" required>
+                    </div>
+                    <div>
+                        <label for="bukti">Bukti pendidikan terakhir (contoh: ijazah)</label><br>
+                        <!-- <input type="file" id="bukti" name="bukti" required> -->
+                        <input type="text" id="bukti" name="bukti" required>
+                    </div>
+                    <div>
+                        <label for="jurusan">Jurusan yang diminati</label><br>
+                        <input type="text" id="jurusan" name="jurusan" required>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <input type="submit" value="Submit">
+                <a href="login.html">Sudah punya akun? Login</a>
+            </div>
+        </form>
+      </div>
+    </main>
+  
+    <footer class="footer footer-colored">
+      <div class="container">
+        <p>&copy; 2023 Drajad Kusuma Adi. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="../scripts/auth/guest.js"></script>
+  <script src="../scripts/register.js"></script>
+
+</html>

@@ -1,0 +1,273 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+#landing {
+  background-image: url('../assets/indexBackground.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 20px;
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.header-transparent {
+  background-color: transparent;
+}
+
+.header-colored {
+  background-color: #3e3ed4;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+  justify-content: left;
+}
+
+/* .navbar {
+  display: flex;
+  justify-content: right;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+}
+
+.navbar li {
+  margin-right: 20px;
+}
+
+.navbar a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #007bff;
+} */
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 180px);
+  text-align: center;
+  color: #ffffff;
+}
+
+.main-content h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.main-content p {
+  font-size: 20px;
+  margin-bottom: 30px;
+  max-width: 1000px;
+}
+
+.main-content button {
+  background-color: #ffa550;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.main-content button:hover {
+  background-color: #ff7b00;
+}
+
+.form-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 20px;
+}
+
+.form-side {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.form-divider div {
+  margin-bottom: 1rem;
+}
+
+.form-divider label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.form-divider input[type="text"],
+.form-divider input[type="email"],
+.form-divider input[type="tel"],
+.form-divider input[type="date"],
+.form-divider input[type="password"],
+.form-divider select,
+.form-divider textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #ffa550;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 1rem auto;
+}
+
+input[type="submit"]:hover {
+  background-color: #ff7b00;
+}
+
+.footer {
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+.footer-transparent {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.footer-colored {
+  background-color: #000000;
+}
+
+.card {
+  width: 100%;
+  max-width: 80vw;
+  background-color: #e8fffd;
+  color: #000000;
+  margin: 20px;
+  padding: 20px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
+  text-align: left;
+}
+
+.card-header {
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.card-header h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-main {
+  padding: 16px;
+}
+
+.card-main p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.card-footer {
+  padding: 16px;
+  border-top: 1px solid #eee;
+}
+
+.card-footer ul {
+  padding: 0;
+}
+
+.search-container {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  margin: 10px;
+}
+
+.search-textbox {
+  flex: 1;
+  background-color: #f5f5f5;
+  color: black;
+  border: none;
+  padding: 0.5rem;
+}
+
+.search-button {
+  background-color: orange;
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.footer li {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    overflow: scroll;
+  }
+
+  .main-content {
+    flex-direction: column;
+  }
+
+  .main-content p {
+    max-width: 100%;
+  }
+
+  .form-container {
+    flex-direction: column;
+  }
+
+  .form-side {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .footer {
+    margin-top: 100px;
+  }
+}
