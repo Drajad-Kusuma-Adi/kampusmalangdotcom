@@ -1,7 +1,7 @@
-let form = document.getElementById('logout_form');
+let logoutForm = document.getElementById('logout_form');
 
 $(document).ready(function() {
-  $('form').submit(function(e) {
+  $(logoutForm).submit(function(e) {
     e.preventDefault();
 
     let formData = new FormData(e.target);

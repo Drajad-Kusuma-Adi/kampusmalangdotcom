@@ -1,7 +1,8 @@
 let loginStatus = localStorage.getItem('kampusMalangLogin');
 
 if (!loginStatus) {
-  window.location.href = '/bootcamp-kampusmalang/www/kampusmalang-fe/index.html';
+  document.querySelector('#backToLanding').classList.remove('hidden');
+  document.querySelector('#applications').classList.add('hidden');
 } else {
   let tokenJson = JSON.stringify({ token: loginStatus });
   let jsonData = JSON.parse(tokenJson);
@@ -11,13 +12,13 @@ if (!loginStatus) {
       type: 'POST',
       data: jsonData,
       success: function(response) {
-        console.log("Logged in")
+        document.querySelector('#logout_form').classList.remove('hidden');
+        document.querySelector('#username').innerHTML = 'User: @' + localStorage.getItem('kampusMalangNama');
+        document.querySelector('#logout_token').value = localStorage.getItem('kampusMalangLogin');
       },
       error: function() {
-          window.location.href = '/bootcamp-kampusmalang/www/kampusmalang-fe/index.html';
+        document.querySelector('#backToLanding').classList.remove('hidden');
+        document.querySelector('#applications').classList.add('hidden');
       }
     });
 }
-
-document.getElementById('token').value = loginStatus;
-document.getElementById('username').textContent = 'User: @' + localStorage.getItem('kampusMalangNama');

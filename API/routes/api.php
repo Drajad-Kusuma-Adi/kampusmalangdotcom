@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\NotificationsController;
 use App\Http\Controllers\UniversityController;
 
 /*
@@ -28,4 +29,9 @@ Route::post('/v1/auth/check_login', [AuthController::class, 'checkToken']);
 Route::get('/v1/random_university', [UniversityController::class, 'getRandomUniversity']);
 Route::post('/v1/register_university', [UniversityController::class, 'registerUniversity']);
 Route::get('/v1/get_majors_by_university', [UniversityController::class, 'getMajorsByUniversity']);
-Route::post('/v1/search_university', [UniversityController::class, 'searchUniversity']);
+Route::get('/v1/search_university', [UniversityController::class, 'searchUniversity']);
+Route::get('/v1/search_major', [UniversityController::class, 'searchMajor']);
+
+Route::get('/v1/get_notifications', [NotificationsController::class, 'getNotifications']);
+Route::get('/v1/get_filtered_notifications', [NotificationsController::class, 'filteredNotifications']);
+Route::get('/v1/read_notification', [NotificationsController::class, 'readNotification']);

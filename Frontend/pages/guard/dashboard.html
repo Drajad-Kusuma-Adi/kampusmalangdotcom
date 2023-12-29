@@ -14,27 +14,57 @@
 <body>
     <header class="header header-colored">
       <div class="container">
-        <a href="../index.html"><img src="../../assets/logo.png" alt="logo.png" class="logo"></a>
+        <a href=""><img src="../../assets/logo.png" alt="logo.png" class="logo"></a>
         <p id="username" style="color: #fff; text-align: center; margin-bottom: -15px; margin-top: 15px;"></p>
-        <form action="" method="post">
-            <input type="text" name="token" id="token" value="" hidden>
+        <form action="" method="post" id="logout_form" class="hidden">
+            <input type="text" name="token" id="logout_token" value="" hidden>
             <input type="submit" value="Logout">
         </form>
+        <div><a href="../../index.html" class="hidden" style="color: #fff;" id="backToLanding">Kembali ke halaman utama</a></div>
+        <script src="../../scripts/logout.js"></script>
+        <br>
+        <div style="display: flex; justify-content: center;"><a href="applications.html" id="applications" class="notification">Your Applications</a></div>
+        <script>
+          // set animation when there is notification
+          let notification = document.getElementById("applications");
+          $.ajax({
+            url: "http://127.0.0.1:8000/api/v1/get_filtered_notifications?token=" + localStorage.getItem("kampusMalangLogin"),
+            type: "GET",
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function(response) {
+              if (response.length > 0) {
+                notification.innerHTML = "(NEW) Your Applications";
+                notification.classList.add("notification-ping");
+              }
+            },
+            error: function() {
+              notification.classList.remove("notification-ping");
+            }
+          })
+        </script>
       </div>
     </header>
 
     <main class="main-content">
       <div class="container" id="mainContainer">
-        <form action="" id="searchForm" method="post"></form>
+        <form action="" id="searchForm" method="post">
           <div class="search-container">
-              <input type="text" class="search-textbox" placeholder="Cari universitas...">
+              <input type="text" name="query" id="query" class="search-textbox" placeholder="Cari..." required>
+              <select name="searchType" id="searchType">
+                <option value="university">Universitas</option>
+                <option value="major">Jurusan</option>
+              </select>
               <button type="submit" class="search-button">Cari</button>
           </div>
         </form>
+        <script src="../../scripts/searchUniversity.js"></script>
+        <div id="cardContainer"></div>
       </div>
       <script src="../../scripts/randomUniversity.js"></script>
     </main>
-  
+
     <footer class="footer footer-colored">
       <div class="container">
         <p>&copy; 2023 Drajad Kusuma Adi. All rights reserved.</p>
@@ -43,6 +73,5 @@
   </body>
 
   <script src="../../scripts/auth/guard.js"></script>
-  <script src="../../scripts/logout.js"></script>
 
 </html>

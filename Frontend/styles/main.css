@@ -244,6 +244,28 @@ input[type="submit"]:hover {
   margin-bottom: 8px;
 }
 
+.hidden {
+  display: none;
+}
+
+@keyframes ping {
+  0% {
+    opacity: 100%;
+  }
+
+  50% {
+    opacity: 50%;
+  }
+}
+
+.notification {
+  color: white;
+}
+
+.notification-ping {
+  animation: ping 0.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
 @media screen and (max-width: 768px) {
   .container {
     max-width: 100%;

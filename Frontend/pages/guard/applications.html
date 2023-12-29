@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kampusMalang</title>
+    <meta name="description" content="Website untuk mencari informasi tentang universitas di kota Malang." />
+    <link rel="shortcut icon" type="image/jpg" href="../assets/logo.png" />
+    <link rel="stylesheet" href="../../styles/main.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <header class="header header-colored">
+      <div class="container">
+        <a href=""><img src="../../assets/logo.png" alt="logo.png" class="logo"></a>
+        <p id="username" style="color: #fff; text-align: center; margin-bottom: -15px; margin-top: 15px;"></p>
+        <form action="" method="post" id="logout_form" class="hidden">
+            <input type="text" name="token" id="logout_token" value="" hidden>
+            <input type="submit" value="Logout">
+        </form>
+        <div style="display: flex; justify-content: center;"><a href="dashboard.html" id="applications" class="notification">Dashboard</a></div>
+        <script src="../../scripts/logout.js"></script>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="container" id="mainContainer">
+        <script src="../../scripts/getNotifications.js"></script>
+      </div>
+    </main>
+
+    <footer class="footer footer-colored">
+      <div class="container">
+        <p>&copy; 2023 Drajad Kusuma Adi. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+
+  <script src="../../scripts/auth/guard.js"></script>
+  <script>
+    // clear notifications upon page load
+    $.ajax({
+      url: 'http://127.0.0.1:8000/api/v1/read_notification?token=' + localStorage.getItem("kampusMalangLogin"),
+      type: 'GET',
+      xhrFields: {
+        withCredentials: true
+      },
+      success: function(response) {
+        console.log('AJAX success');
+      },
+      error: function() {
+        console.log('AJAX failure');
+      }
+    })
+  </script>
+
+</html>

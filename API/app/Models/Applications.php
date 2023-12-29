@@ -13,9 +13,11 @@ class Applications extends Model
 
     protected $fillable = [
         'nama',
+        'user_id',
         'universitas',
         'jurusan',
-        'alasan'
+        'alasan',
+        'datetime'
     ];
 
     public $timestamps = false;
