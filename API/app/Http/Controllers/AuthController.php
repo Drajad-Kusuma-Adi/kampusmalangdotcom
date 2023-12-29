@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
-    public function register(Request $request) {
+    public function register(Request $request)
+    {
         $data = $request->validate([
             'nama' => 'required',
             'email' => 'required',
@@ -40,7 +41,8 @@ class AuthController extends Controller
         ], 200);
     }
 
-    public function login(Request $request) {
+    public function login(Request $request)
+    {
         $request->validate([
             'email' => 'required',
             'password' => 'required',
@@ -61,11 +63,6 @@ class AuthController extends Controller
 
         $token = md5($user['email'] . $user['password']);
         $loginToken = Users::where('email', $request->email)->update(['token' => $token]);
-        if (!$loginToken) {
-            return response()->json([
-                'message' => 'Login failed'
-            ], 401);
-        }
 
         return response()->json([
             'nama' => $user['nama'],
@@ -82,7 +79,8 @@ class AuthController extends Controller
         ]);
     }
 
-    public function logout(Request $request) {
+    public function logout(Request $request)
+    {
         if (!$request->filled('token')) {
             return response()->json([
                 'message' => 'unauthorized user'
@@ -101,7 +99,8 @@ class AuthController extends Controller
         ]);
     }
 
-    public function checkToken(Request $request) {
+    public function checkToken(Request $request)
+    {
         if (!$request->filled('token')) {
             return response()->json([
                 'message' => 'unauthorized user'
